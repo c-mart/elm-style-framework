@@ -9,7 +9,7 @@ module Framework.FormFieldWithPattern exposing (Field(..), Model, Msg, example1,
 
 -}
 
-import Color
+import StyleFrameworkColor
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
@@ -257,10 +257,10 @@ inputText model { id, field, pattern, label } =
              , behindContent <|
                 el
                     ([ if hasFocus model field && largeSize then
-                        Font.color <| Color.toElementColor Framework.Color.primary
+                        Font.color <| StyleFrameworkColor.toElementColor Framework.Color.primary
 
                        else
-                        Font.color <| Color.toElementColor Framework.Color.grey_light
+                        Font.color <| StyleFrameworkColor.toElementColor Framework.Color.grey_light
                      , moveDown moveDownPlaceHolder
                      , hackInLineStyle "pointer-events" "none"
                      , hackInLineStyle "letter-spacing" letterSpacing
@@ -277,7 +277,7 @@ inputText model { id, field, pattern, label } =
              ]
                 ++ font
                 ++ (if hasFocus model field then
-                        [ Border.color <| Color.toElementColor Framework.Color.primary ]
+                        [ Border.color <| StyleFrameworkColor.toElementColor Framework.Color.primary ]
 
                     else
                         []

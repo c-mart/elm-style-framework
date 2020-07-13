@@ -104,7 +104,7 @@ For any issue or to get in touch with the authors, refer to the github page.
 import Browser
 import Browser.Events
 import Browser.Navigation
-import Color
+import StyleFrameworkColor
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
@@ -140,11 +140,11 @@ debug =
 {-| Configuration
 -}
 type alias Conf msg =
-    { gray3 : Color.Color
-    , gray9 : Color.Color
-    , grayB : Color.Color
-    , grayD : Color.Color
-    , grayF : Color.Color
+    { gray3 : StyleFrameworkColor.Color
+    , gray9 : StyleFrameworkColor.Color
+    , grayB : StyleFrameworkColor.Color
+    , grayD : StyleFrameworkColor.Color
+    , grayF : StyleFrameworkColor.Color
     , titleLeftSide : Element msg
     , title : Element msg
     , subTitle : String
@@ -160,11 +160,11 @@ type alias Conf msg =
 {-| -}
 initConf : Conf msg
 initConf =
-    { gray3 = Color.rgb 0x33 0x33 0x33
-    , gray9 = Color.rgb 0x99 0x99 0x99
-    , grayB = Color.rgb 0xB6 0xB6 0xB6
-    , grayD = Color.rgb 0xD1 0xD1 0xD1
-    , grayF = Color.rgb 0xF7 0xF7 0xF7
+    { gray3 = StyleFrameworkColor.rgb 0x33 0x33 0x33
+    , gray9 = StyleFrameworkColor.rgb 0x99 0x99 0x99
+    , grayB = StyleFrameworkColor.rgb 0xB6 0xB6 0xB6
+    , grayD = StyleFrameworkColor.rgb 0xD1 0xD1 0xD1
+    , grayF = StyleFrameworkColor.rgb 0xF7 0xF7 0xF7
     , titleLeftSide =
         column []
             [ link []
@@ -228,7 +228,7 @@ initConf =
                 [ alignRight
 
                 --, Font.color <| Framework.Color.primary
-                , Font.color <| Color.toElementColor Color.black
+                , Font.color <| StyleFrameworkColor.toElementColor StyleFrameworkColor.black
                 ]
                 { label = image [ width <| px 60, alpha 0.5 ] { src = "images/github.png", description = "Fork me on Github" }
                 , url = "https://github.com/lucamug/elm-style-framework"
@@ -539,8 +539,8 @@ pre {
 viewMenuColumn : Model -> Element Msg
 viewMenuColumn model =
     column
-        [ Background.color <| Color.toElementColor model.conf.gray3
-        , Font.color <| Color.toElementColor model.conf.grayB
+        [ Background.color <| StyleFrameworkColor.toElementColor model.conf.gray3
+        , Font.color <| StyleFrameworkColor.toElementColor model.conf.grayB
         , width fill
         , height shrink
         , spacing 30
@@ -594,7 +594,7 @@ viewIntrospectionTitle configuration introspection =
             text introspection.description
     in
     column
-        [ Background.color <| Color.toElementColor configuration.grayF
+        [ Background.color <| StyleFrameworkColor.toElementColor configuration.grayF
         , padding configuration.mainPadding
         , spacing 10
         , width fill
@@ -631,7 +631,7 @@ viewIntrospectionBody model title listSubSection =
     column
         [ padding model.conf.mainPadding
         , spacing model.conf.mainPadding
-        , Background.color <| Color.toElementColor Color.white
+        , Background.color <| StyleFrameworkColor.toElementColor StyleFrameworkColor.white
         , width fill
         ]
         [ el [ Font.size 28 ] (text <| title)
@@ -664,7 +664,7 @@ viewLogo title subTitle version =
 viewIntrospectionForMenu : Conf Msg -> Introspection -> Bool -> Element Msg
 viewIntrospectionForMenu configuration introspection open =
     column
-        [ Font.color <| Color.toElementColor configuration.gray9
+        [ Font.color <| StyleFrameworkColor.toElementColor configuration.gray9
         ]
         [ el
             [ pointer
@@ -696,7 +696,7 @@ viewIntrospectionForMenu configuration introspection open =
         , column
             ([ height shrink
              , Font.size 16
-             , Font.color <| Color.toElementColor configuration.grayD
+             , Font.color <| StyleFrameworkColor.toElementColor configuration.grayD
              , spacing 8
              , paddingEach { bottom = 1, left = 26, right = 0, top = 12 }
              , clip
@@ -825,7 +825,7 @@ view model =
     layoutWith
         { options =
             [ focusStyle
-                { borderColor = Just <| Color.toElementColor Framework.Color.primary
+                { borderColor = Just <| StyleFrameworkColor.toElementColor Framework.Color.primary
                 , backgroundColor = Nothing
                 , shadow = Nothing
                 }
@@ -840,8 +840,8 @@ view model =
             , conf.font.typefaceFallback
             ]
         , Font.size 16
-        , Font.color <| Color.toElementColor model.conf.gray3
-        , Background.color <| Color.toElementColor Color.white
+        , Font.color <| StyleFrameworkColor.toElementColor model.conf.gray3
+        , Background.color <| StyleFrameworkColor.toElementColor StyleFrameworkColor.white
         , model.conf.forkMe
         ]
     <|
@@ -994,7 +994,7 @@ viewSubSection model ( componentExample, componentExampleSourceCode ) =
 sourceCodeWrapper : Conf msg -> String -> Element Msg
 sourceCodeWrapper configuration sourceCode =
     el
-        [ Background.color <| Color.toElementColor configuration.gray3
+        [ Background.color <| StyleFrameworkColor.toElementColor configuration.gray3
         , Border.rounded 8
         , width <| fill
         , clip
@@ -1005,7 +1005,7 @@ sourceCodeWrapper configuration sourceCode =
         -- it doesn't fit. See https://ellie-app.com/38Nf6ygRSMta1
         row
             [ Font.family [ Font.monospace ]
-            , Font.color <| Color.toElementColor configuration.gray9
+            , Font.color <| StyleFrameworkColor.toElementColor configuration.gray9
             , Font.size 16
             , padding 16
             , width <| px 100

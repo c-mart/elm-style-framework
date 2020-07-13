@@ -14,7 +14,7 @@ This list is inspired by Bulma framework: <https://bulma.io/documentation/overvi
 -- 019 import ColorMath.Hex8
 -- import Color
 
-import Color
+import StyleFrameworkColor
 import Dict
 import Element
 import Element.Font as Font
@@ -24,53 +24,53 @@ import MyStyle
 {-| -}
 conf :
     { color :
-        { background : Color.Color
-        , black : Color.Color
-        , black_bis : Color.Color
-        , black_ter : Color.Color
-        , blue : Color.Color
-        , border : Color.Color
-        , border_hover : Color.Color
-        , code : Color.Color
-        , code_background : Color.Color
-        , cyan : Color.Color
-        , danger : Color.Color
-        , dark : Color.Color
-        , green : Color.Color
-        , grey : Color.Color
-        , grey_dark : Color.Color
-        , grey_darker : Color.Color
-        , grey_light : Color.Color
-        , grey_lighter : Color.Color
-        , info : Color.Color
-        , light : Color.Color
-        , link : Color.Color
-        , link_active : Color.Color
-        , link_active_border : Color.Color
-        , link_focus : Color.Color
-        , link_focus_border : Color.Color
-        , link_hover : Color.Color
-        , link_hover_border : Color.Color
-        , link_invert : Color.Color
-        , link_visited : Color.Color
-        , muted : Color.Color
-        , orange : Color.Color
-        , pre : Color.Color
-        , pre_background : Color.Color
-        , primary : Color.Color
-        , purple : Color.Color
-        , red : Color.Color
-        , success : Color.Color
-        , text : Color.Color
-        , text_light : Color.Color
-        , text_strong : Color.Color
-        , transparent : Color.Color
-        , turquoise : Color.Color
-        , warning : Color.Color
-        , white : Color.Color
-        , white_bis : Color.Color
-        , white_ter : Color.Color
-        , yellow : Color.Color
+        { background : StyleFrameworkColor.Color
+        , black : StyleFrameworkColor.Color
+        , black_bis : StyleFrameworkColor.Color
+        , black_ter : StyleFrameworkColor.Color
+        , blue : StyleFrameworkColor.Color
+        , border : StyleFrameworkColor.Color
+        , border_hover : StyleFrameworkColor.Color
+        , code : StyleFrameworkColor.Color
+        , code_background : StyleFrameworkColor.Color
+        , cyan : StyleFrameworkColor.Color
+        , danger : StyleFrameworkColor.Color
+        , dark : StyleFrameworkColor.Color
+        , green : StyleFrameworkColor.Color
+        , grey : StyleFrameworkColor.Color
+        , grey_dark : StyleFrameworkColor.Color
+        , grey_darker : StyleFrameworkColor.Color
+        , grey_light : StyleFrameworkColor.Color
+        , grey_lighter : StyleFrameworkColor.Color
+        , info : StyleFrameworkColor.Color
+        , light : StyleFrameworkColor.Color
+        , link : StyleFrameworkColor.Color
+        , link_active : StyleFrameworkColor.Color
+        , link_active_border : StyleFrameworkColor.Color
+        , link_focus : StyleFrameworkColor.Color
+        , link_focus_border : StyleFrameworkColor.Color
+        , link_hover : StyleFrameworkColor.Color
+        , link_hover_border : StyleFrameworkColor.Color
+        , link_invert : StyleFrameworkColor.Color
+        , link_visited : StyleFrameworkColor.Color
+        , muted : StyleFrameworkColor.Color
+        , orange : StyleFrameworkColor.Color
+        , pre : StyleFrameworkColor.Color
+        , pre_background : StyleFrameworkColor.Color
+        , primary : StyleFrameworkColor.Color
+        , purple : StyleFrameworkColor.Color
+        , red : StyleFrameworkColor.Color
+        , success : StyleFrameworkColor.Color
+        , text : StyleFrameworkColor.Color
+        , text_light : StyleFrameworkColor.Color
+        , text_strong : StyleFrameworkColor.Color
+        , transparent : StyleFrameworkColor.Color
+        , turquoise : StyleFrameworkColor.Color
+        , warning : StyleFrameworkColor.Color
+        , white : StyleFrameworkColor.Color
+        , white_bis : StyleFrameworkColor.Color
+        , white_ter : StyleFrameworkColor.Color
+        , yellow : StyleFrameworkColor.Color
         }
     , font : { typeface : String, typefaceFallback : Font.Font, url : String }
     , moveDownPlaceHolder : { large : Float, small : Float }
@@ -274,13 +274,13 @@ getInt key =
 -}
 
 
-getColor : String -> Color.Color
+getColor : String -> StyleFrameworkColor.Color
 getColor key =
     let
         value =
             getString key
     in
-    Color.hexToColor <| value
+    StyleFrameworkColor.hexToColor <| value
 
 
 getValue :
@@ -332,25 +332,25 @@ bulmaColor :
     }
 bulmaColor =
     { -- https://bulma.io/documentation/overview/variables/
-      black = Color.hsl2ToString 0 0 4
-    , black_bis = Color.hsl2ToString 0 0 7
-    , black_ter = Color.hsl2ToString 0 0 14
-    , grey_darker = Color.hsl2ToString 0 0 21
-    , grey_dark = Color.hsl2ToString 0 0 29
-    , grey = Color.hsl2ToString 0 0 48
-    , grey_light = Color.hsl2ToString 0 0 71
-    , grey_lighter = Color.hsl2ToString 0 0 86
-    , white_ter = Color.hsl2ToString 0 0 96
-    , white_bis = Color.hsl2ToString 0 0 98
-    , white = Color.hsl2ToString 0 0 100
-    , orange = Color.hsl2ToString 14 100 53
-    , yellow = Color.hsl2ToString 48 100 67
-    , green = Color.hsl2ToString 141 71 48
-    , turquoise = Color.hsl2ToString 171 100 41
-    , cyan = Color.hsl2ToString 204 86 53
-    , blue = Color.hsl2ToString 217 71 53
-    , purple = Color.hsl2ToString 271 100 71
-    , red = Color.hsl2ToString 348 100 61
+      black = StyleFrameworkColor.hsl2ToString 0 0 4
+    , black_bis = StyleFrameworkColor.hsl2ToString 0 0 7
+    , black_ter = StyleFrameworkColor.hsl2ToString 0 0 14
+    , grey_darker = StyleFrameworkColor.hsl2ToString 0 0 21
+    , grey_dark = StyleFrameworkColor.hsl2ToString 0 0 29
+    , grey = StyleFrameworkColor.hsl2ToString 0 0 48
+    , grey_light = StyleFrameworkColor.hsl2ToString 0 0 71
+    , grey_lighter = StyleFrameworkColor.hsl2ToString 0 0 86
+    , white_ter = StyleFrameworkColor.hsl2ToString 0 0 96
+    , white_bis = StyleFrameworkColor.hsl2ToString 0 0 98
+    , white = StyleFrameworkColor.hsl2ToString 0 0 100
+    , orange = StyleFrameworkColor.hsl2ToString 14 100 53
+    , yellow = StyleFrameworkColor.hsl2ToString 48 100 67
+    , green = StyleFrameworkColor.hsl2ToString 141 71 48
+    , turquoise = StyleFrameworkColor.hsl2ToString 171 100 41
+    , cyan = StyleFrameworkColor.hsl2ToString 204 86 53
+    , blue = StyleFrameworkColor.hsl2ToString 217 71 53
+    , purple = StyleFrameworkColor.hsl2ToString 271 100 71
+    , red = StyleFrameworkColor.hsl2ToString 348 100 61
     }
 
 

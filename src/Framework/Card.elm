@@ -11,7 +11,7 @@ Wrapper for content
 
 -}
 
-import Color
+import StyleFrameworkColor
 import Element exposing (Attribute, Element, alignTop, centerX, centerY, column, el, fill, height, html, htmlAttribute, padding, pointer, px, row, shrink, spacing, text, width)
 import Element.Background as Background
 import Element.Border as Border
@@ -69,10 +69,10 @@ text "Content\"""" ) ] )
 {-| -}
 cardCommonAttr : List (Attribute msg)
 cardCommonAttr =
-    [ Border.shadow { blur = 10, color = Color.toElementColor <| Color.rgba 0 0 0 0.05, offset = ( 0, 2 ), size = 1 }
+    [ Border.shadow { blur = 10, color = StyleFrameworkColor.toElementColor <| StyleFrameworkColor.rgba 0 0 0 0.05, offset = ( 0, 2 ), size = 1 }
     , Border.width 1
-    , Border.color <| Color.toElementColor Framework.Color.grey_lighter
-    , Background.color <| Color.toElementColor Framework.Color.white
+    , Border.color <| StyleFrameworkColor.toElementColor Framework.Color.grey_lighter
+    , Background.color <| StyleFrameworkColor.toElementColor Framework.Color.white
     , Border.rounded 4
     , alignTop
     ]
@@ -108,7 +108,7 @@ example1 model =
                     , el [ centerX ] <| text "Front"
                     ]
         , back =
-            el (commonAttr ++ [ Background.color <| Color.toElementColor Color.yellow ]) <|
+            el (commonAttr ++ [ Background.color <| StyleFrameworkColor.toElementColor StyleFrameworkColor.yellow ]) <|
                 column contentAttr
                     [ el [ centerX ] <| text "Click Me"
                     , el [ centerX ] <| text "Back"
@@ -138,12 +138,12 @@ flipping
 {-| -}
 normal :
     { conf
-        | colorBackground : Color.Color
-        , colorFont : Color.Color
-        , colorFontSecondary : Color.Color
-        , colorBorder : Color.Color
-        , colorBorderSecondary : Color.Color
-        , colorShadow : Color.Color
+        | colorBackground : StyleFrameworkColor.Color
+        , colorFont : StyleFrameworkColor.Color
+        , colorFontSecondary : StyleFrameworkColor.Color
+        , colorBorder : StyleFrameworkColor.Color
+        , colorBorderSecondary : StyleFrameworkColor.Color
+        , colorShadow : StyleFrameworkColor.Color
         , extraAttributes : List (Element.Attr () msg)
         , title : String
         , subTitle : String
@@ -156,23 +156,23 @@ normal { colorBackground, colorFont, colorFontSecondary, colorBorder, colorBorde
             ++ [ Border.width 1
                , width fill
                , height shrink
-               , Background.color <| Color.toElementColor colorBackground
-               , Background.color <| Color.toElementColor Framework.Color.white
-               , Font.color <| Color.toElementColor colorFont
-               , Border.color <| Color.toElementColor colorBorder
-               , Border.shadow { blur = 10, color = Color.toElementColor colorShadow, offset = ( 0, 2 ), size = 1 }
+               , Background.color <| StyleFrameworkColor.toElementColor colorBackground
+               , Background.color <| StyleFrameworkColor.toElementColor Framework.Color.white
+               , Font.color <| StyleFrameworkColor.toElementColor colorFont
+               , Border.color <| StyleFrameworkColor.toElementColor colorBorder
+               , Border.shadow { blur = 10, color = StyleFrameworkColor.toElementColor colorShadow, offset = ( 0, 2 ), size = 1 }
                ]
             ++ extraAttributes
         )
         [ el
             [ padding 10
             , Border.widthEach { bottom = 1, left = 0, right = 0, top = 0 }
-            , Border.color <| Color.toElementColor Framework.Color.grey_light
+            , Border.color <| StyleFrameworkColor.toElementColor Framework.Color.grey_light
             , width fill
             ]
             (row [ spacing 10 ]
                 [ el [ Font.bold ] <| text title
-                , el [ Font.color <| Color.toElementColor Framework.Color.grey ] <| text subTitle
+                , el [ Font.color <| StyleFrameworkColor.toElementColor Framework.Color.grey ] <| text subTitle
                 ]
             )
         , el [ padding 20, width fill ] content
@@ -191,7 +191,7 @@ simpleWithTitle title subTitle content =
         , colorFontSecondary = Framework.Color.grey_light
         , colorBorder = Framework.Color.grey_light
         , colorBorderSecondary = Framework.Color.grey_light
-        , colorShadow = Color.rgba 0 0 0 0.05
+        , colorShadow = StyleFrameworkColor.rgba 0 0 0 0.05
         , extraAttributes = []
         }
 

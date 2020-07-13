@@ -14,7 +14,7 @@ module Framework.Color exposing
 
 -- import Color
 
-import Color
+import StyleFrameworkColor
 import Element exposing (Element, column)
 import Element.Background
 import Element.Border
@@ -111,308 +111,308 @@ introspection =
 
 
 {-| -}
-usageWrapper : Color.Color -> Element.Element msg
+usageWrapper : StyleFrameworkColor.Color -> Element.Element msg
 usageWrapper cl =
     Element.el
-        [ Element.Background.color <| Color.toElementColor cl
+        [ Element.Background.color <| StyleFrameworkColor.toElementColor cl
         , Element.width <| Element.px 200
         , Element.padding 10
         , Element.Border.rounded 5
-        , Element.Font.color <| Color.toElementColor <| Color.maximumContrast cl (Color.rgb 0 0 0) (Color.rgb 255 255 255)
+        , Element.Font.color <| StyleFrameworkColor.toElementColor <| StyleFrameworkColor.maximumContrast cl (StyleFrameworkColor.rgb 0 0 0) (StyleFrameworkColor.rgb 255 255 255)
         ]
     <|
         column []
-            [ Element.text <| Color.colorToHex cl
+            [ Element.text <| StyleFrameworkColor.colorToHex cl
             ]
 
 
 {-| -}
-background : Color.Color
+background : StyleFrameworkColor.Color
 background =
     conf.color.background
 
 
 {-| -}
-black : Color.Color
+black : StyleFrameworkColor.Color
 black =
     conf.color.black
 
 
 {-| -}
-black_bis : Color.Color
+black_bis : StyleFrameworkColor.Color
 black_bis =
     conf.color.black_bis
 
 
 {-| -}
-black_ter : Color.Color
+black_ter : StyleFrameworkColor.Color
 black_ter =
     conf.color.black_ter
 
 
 {-| -}
-blue : Color.Color
+blue : StyleFrameworkColor.Color
 blue =
     conf.color.blue
 
 
 {-| -}
-border : Color.Color
+border : StyleFrameworkColor.Color
 border =
     conf.color.border
 
 
 {-| -}
-border_hover : Color.Color
+border_hover : StyleFrameworkColor.Color
 border_hover =
     conf.color.border_hover
 
 
 {-| -}
-code : Color.Color
+code : StyleFrameworkColor.Color
 code =
     conf.color.code
 
 
 {-| -}
-code_background : Color.Color
+code_background : StyleFrameworkColor.Color
 code_background =
     conf.color.code_background
 
 
 {-| -}
-cyan : Color.Color
+cyan : StyleFrameworkColor.Color
 cyan =
     conf.color.cyan
 
 
 {-| -}
-danger : Color.Color
+danger : StyleFrameworkColor.Color
 danger =
     conf.color.danger
 
 
 {-| -}
-dark : Color.Color
+dark : StyleFrameworkColor.Color
 dark =
     conf.color.dark
 
 
 {-| -}
-green : Color.Color
+green : StyleFrameworkColor.Color
 green =
     conf.color.green
 
 
 {-| -}
-grey : Color.Color
+grey : StyleFrameworkColor.Color
 grey =
     conf.color.grey
 
 
 {-| -}
-grey_dark : Color.Color
+grey_dark : StyleFrameworkColor.Color
 grey_dark =
     conf.color.grey_dark
 
 
 {-| -}
-grey_darker : Color.Color
+grey_darker : StyleFrameworkColor.Color
 grey_darker =
     conf.color.grey_darker
 
 
 {-| -}
-grey_light : Color.Color
+grey_light : StyleFrameworkColor.Color
 grey_light =
     conf.color.grey_light
 
 
 {-| -}
-grey_lighter : Color.Color
+grey_lighter : StyleFrameworkColor.Color
 grey_lighter =
     conf.color.grey_lighter
 
 
 {-| -}
-info : Color.Color
+info : StyleFrameworkColor.Color
 info =
     conf.color.info
 
 
 {-| -}
-light : Color.Color
+light : StyleFrameworkColor.Color
 light =
     conf.color.light
 
 
 {-| -}
-link : Color.Color
+link : StyleFrameworkColor.Color
 link =
     conf.color.link
 
 
 {-| -}
-link_active : Color.Color
+link_active : StyleFrameworkColor.Color
 link_active =
     conf.color.link_active
 
 
 {-| -}
-link_active_border : Color.Color
+link_active_border : StyleFrameworkColor.Color
 link_active_border =
     conf.color.link_active_border
 
 
 {-| -}
-link_focus : Color.Color
+link_focus : StyleFrameworkColor.Color
 link_focus =
     conf.color.link_focus
 
 
 {-| -}
-link_focus_border : Color.Color
+link_focus_border : StyleFrameworkColor.Color
 link_focus_border =
     conf.color.link_focus_border
 
 
 {-| -}
-link_hover : Color.Color
+link_hover : StyleFrameworkColor.Color
 link_hover =
     conf.color.link_hover
 
 
 {-| -}
-link_hover_border : Color.Color
+link_hover_border : StyleFrameworkColor.Color
 link_hover_border =
     conf.color.link_hover_border
 
 
 {-| -}
-link_invert : Color.Color
+link_invert : StyleFrameworkColor.Color
 link_invert =
     conf.color.link_invert
 
 
 {-| -}
-link_visited : Color.Color
+link_visited : StyleFrameworkColor.Color
 link_visited =
     conf.color.link_visited
 
 
 {-| -}
-muted : Color.Color
+muted : StyleFrameworkColor.Color
 muted =
     conf.color.muted
 
 
 {-| -}
-orange : Color.Color
+orange : StyleFrameworkColor.Color
 orange =
     conf.color.orange
 
 
 {-| -}
-pre : Color.Color
+pre : StyleFrameworkColor.Color
 pre =
     conf.color.pre
 
 
 {-| -}
-pre_background : Color.Color
+pre_background : StyleFrameworkColor.Color
 pre_background =
     conf.color.pre_background
 
 
 {-| -}
-primary : Color.Color
+primary : StyleFrameworkColor.Color
 primary =
     conf.color.primary
 
 
 {-| -}
-purple : Color.Color
+purple : StyleFrameworkColor.Color
 purple =
     conf.color.purple
 
 
 {-| -}
-red : Color.Color
+red : StyleFrameworkColor.Color
 red =
     conf.color.red
 
 
 {-| -}
-success : Color.Color
+success : StyleFrameworkColor.Color
 success =
     conf.color.success
 
 
 {-| -}
-text : Color.Color
+text : StyleFrameworkColor.Color
 text =
     conf.color.text
 
 
 {-| -}
-text_light : Color.Color
+text_light : StyleFrameworkColor.Color
 text_light =
     conf.color.text_light
 
 
 {-| -}
-text_strong : Color.Color
+text_strong : StyleFrameworkColor.Color
 text_strong =
     conf.color.text_strong
 
 
 {-| -}
-transparent : Color.Color
+transparent : StyleFrameworkColor.Color
 transparent =
     conf.color.transparent
 
 
-disabledButtonBackground : Color.Color
+disabledButtonBackground : StyleFrameworkColor.Color
 disabledButtonBackground =
     conf.color.grey_lighter
 
 
-disabledButtonFont : Color.Color
+disabledButtonFont : StyleFrameworkColor.Color
 disabledButtonFont =
     conf.color.grey_light
 
 
 {-| -}
-turquoise : Color.Color
+turquoise : StyleFrameworkColor.Color
 turquoise =
     conf.color.turquoise
 
 
 {-| -}
-warning : Color.Color
+warning : StyleFrameworkColor.Color
 warning =
     conf.color.warning
 
 
 {-| -}
-white : Color.Color
+white : StyleFrameworkColor.Color
 white =
     conf.color.white
 
 
 {-| -}
-white_bis : Color.Color
+white_bis : StyleFrameworkColor.Color
 white_bis =
     conf.color.white_bis
 
 
 {-| -}
-white_ter : Color.Color
+white_ter : StyleFrameworkColor.Color
 white_ter =
     conf.color.white_ter
 
 
 {-| -}
-yellow : Color.Color
+yellow : StyleFrameworkColor.Color
 yellow =
     conf.color.yellow

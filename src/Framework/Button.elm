@@ -9,7 +9,7 @@ module Framework.Button exposing (button, buttonAttr, buttonLink, buttonLinkWidt
 
 -}
 
-import Color
+import StyleFrameworkColor
 import Element exposing (Attribute, Element, centerX, centerY, column, el, htmlAttribute, inFront, link, mouseOver, paddingXY, row, spacing, text)
 import Element.Background as Background
 import Element.Border as Border
@@ -142,7 +142,7 @@ type State
 
 
 type alias Conf =
-    { color : Color.Color
+    { color : StyleFrameworkColor.Color
     , size : Size
     , state : State
     }
@@ -313,12 +313,12 @@ buttonWithCustomizableWith { onPress, modifiers, label, width, extraAttrs } =
         }
 
 
-colorDefault : Color.Color
+colorDefault : StyleFrameworkColor.Color
 colorDefault =
     Framework.Color.white
 
 
-colorBorderDefault : Color.Color
+colorBorderDefault : StyleFrameworkColor.Color
 colorBorderDefault =
     Framework.Color.grey_lighter
 
@@ -355,13 +355,13 @@ buttonAttr modifiers =
 
                 _ ->
                     backgroundColor
-                        |> Color.lighten 0.8
-                        |> Color.saturate 0.9
+                        |> StyleFrameworkColor.lighten 0.8
+                        |> StyleFrameworkColor.saturate 0.9
 
         borderMouseOverColor =
             borderColor
-                |> Color.lighten 0.8
-                |> Color.saturate 0.9
+                |> StyleFrameworkColor.lighten 0.8
+                |> StyleFrameworkColor.saturate 0.9
 
         fontMouseOverColor =
             case confButton.state of
@@ -376,8 +376,8 @@ buttonAttr modifiers =
 
                 _ ->
                     fontColor
-                        |> Color.lighten 0.8
-                        |> Color.saturate 0.9
+                        |> StyleFrameworkColor.lighten 0.8
+                        |> StyleFrameworkColor.saturate 0.9
 
         backgroundColor =
             case confButton.state of
@@ -468,21 +468,21 @@ buttonAttr modifiers =
                     []
     in
     [ Font.size fontSize
-    , Font.color <| Color.toElementColor fontColor
-    , Background.color <| Color.toElementColor backgroundColor
+    , Font.color <| StyleFrameworkColor.toElementColor fontColor
+    , Background.color <| StyleFrameworkColor.toElementColor backgroundColor
     , paddingXY (Tuple.first buttonPadding) (Tuple.second buttonPadding)
     , Border.rounded borderRounded
     , Border.width 1
-    , Border.color <| Color.toElementColor borderColor
+    , Border.color <| StyleFrameworkColor.toElementColor borderColor
     ]
         ++ (if confButton.state == StateDisabled then
                 [ htmlAttribute <| Html.Attributes.style "cursor" "not-allowed" ]
 
             else
                 [ mouseOver
-                    [ Font.color <| Color.toElementColor fontMouseOverColor
-                    , Background.color <| Color.toElementColor backgroundMouseOverColor
-                    , Border.color <| Color.toElementColor borderMouseOverColor
+                    [ Font.color <| StyleFrameworkColor.toElementColor fontMouseOverColor
+                    , Background.color <| StyleFrameworkColor.toElementColor backgroundMouseOverColor
+                    , Border.color <| StyleFrameworkColor.toElementColor borderMouseOverColor
                     ]
                 ]
            )

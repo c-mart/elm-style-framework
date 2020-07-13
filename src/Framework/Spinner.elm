@@ -9,7 +9,7 @@ module Framework.Spinner exposing (Spinner(..), spinner, introspection)
 
 -}
 
-import Color
+import StyleFrameworkColor
 import Element
 import Html
 import Svg
@@ -29,8 +29,8 @@ introspection =
     , signature = ""
     , variations =
         [ ( "Spinners"
-          , [ ( spinner ThreeCircles 32 Color.black, "spinner ThreeCircles 32 Color.black" )
-            , ( spinner Rotation 32 Color.black, "spinner Rotation 32 Color.black" )
+          , [ ( spinner ThreeCircles 32 StyleFrameworkColor.black, "spinner ThreeCircles 32 Color.black" )
+            , ( spinner Rotation 32 StyleFrameworkColor.black, "spinner Rotation 32 Color.black" )
             ]
           )
         ]
@@ -42,7 +42,7 @@ introspection =
     spinner ThreeCircles 32 Color.black
 
 -}
-spinner : Spinner -> Int -> Color.Color -> Element.Element msg
+spinner : Spinner -> Int -> StyleFrameworkColor.Color -> Element.Element msg
 spinner sp size color =
     Element.html <|
         case sp of
@@ -60,11 +60,11 @@ type Spinner
     | Rotation
 
 
-spinnerThreeCirclesHtml : Int -> Color.Color -> Html.Html msg
+spinnerThreeCirclesHtml : Int -> StyleFrameworkColor.Color -> Html.Html msg
 spinnerThreeCirclesHtml size color =
     let
         colorString =
-            Color.colorToHex color
+            StyleFrameworkColor.colorToHex color
     in
     Svg.svg
         [ SA.viewBox "10 26 44 12"
@@ -112,11 +112,11 @@ spinnerThreeCirclesHtml size color =
         ]
 
 
-spinnerRotationHtml : Int -> Color.Color -> Html.Html msg
+spinnerRotationHtml : Int -> StyleFrameworkColor.Color -> Html.Html msg
 spinnerRotationHtml size color =
     let
         colorString =
-            Color.colorToHex color
+            StyleFrameworkColor.colorToHex color
 
         idElement =
             "id" ++ String.dropLeft 1 colorString

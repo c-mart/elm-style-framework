@@ -12,7 +12,7 @@ module Framework.FormField exposing
 
 -}
 
-import Color
+import StyleFrameworkColor
 import Element exposing (..)
 import Element.Background as Background
 import Element.Border as Border
@@ -175,7 +175,7 @@ newHelperText enteredField field value =
 
 helperTextFormat t color =
     row
-        [ Font.color <| Color.toElementColor color
+        [ Font.color <| StyleFrameworkColor.toElementColor color
         , Font.size 12
         , spacing 4
         ]
@@ -185,11 +185,11 @@ helperTextFormat t color =
 
 
 errorColor =
-    Color.rgb 200 0 0
+    StyleFrameworkColor.rgb 200 0 0
 
 
 infoColor =
-    Color.rgb 0 150 0
+    StyleFrameworkColor.rgb 0 150 0
 
 
 maybeShowHidePassword =
@@ -509,7 +509,7 @@ attrs { msgOnFocus, msgOnLoseFocus, maybeMsgOnEnter, inputTypeAttrs, field, mayb
     , htmlAttribute <| Html.Attributes.style "transition" "all 0.15s"
     ]
         ++ (if focused then
-                [ Border.color <| Color.toElementColor Framework.Color.primary ]
+                [ Border.color <| StyleFrameworkColor.toElementColor Framework.Color.primary ]
 
             else
                 []
@@ -669,7 +669,7 @@ inputPassword mainAttrs conf =
                                         icon
 
                                     Nothing ->
-                                        Icon.hide (Color.rgb 100 100 100) 20
+                                        Icon.hide (StyleFrameworkColor.rgb 100 100 100) 20
 
                             else
                                 case showHidePassword.maybeShowIcon of
@@ -677,7 +677,7 @@ inputPassword mainAttrs conf =
                                         icon
 
                                     Nothing ->
-                                        Icon.show (Color.rgb 100 100 100) 20
+                                        Icon.show (StyleFrameworkColor.rgb 100 100 100) 20
                     ]
 
                 Nothing ->
